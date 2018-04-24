@@ -1,12 +1,15 @@
+{% extends 'music/base.html' %}
+{% block title %}{% endblock %}
+
+{% block body %}
 {% if all_albums %}
     <h3>Here are all tha albums!</h3>
     <ul>
         {% for album in all_albums %}
-        <li><a href="{% url 'music:detail' album_id %}">{{ album.album_title }}</a></li>
+            <li><a href="{% url 'music:detail' album.id %}">{{ album.album_title }}</a></li>
         {% endfor %}
-
-    hvernig virkar github?
     </ul>
 {% else %}
     <h3>Please insert a album!</h3>
 {% endif %}
+{% endblock %}
